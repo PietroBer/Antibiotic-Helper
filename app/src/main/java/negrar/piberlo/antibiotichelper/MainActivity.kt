@@ -95,7 +95,7 @@ fun DisclaimerWrapper(content: @Composable () -> Unit) {
             title = { Text("Attenzione") },
             text = {
                 Column {
-                    Text("Ho provato a fornire le informazioni più corrette possibili, ma non sono infallibile! Controlla sempre sulla scheda tecnica del farmaco.\nSe trovi errori o hai richieste scrivimi a supportoAH@gmail.com")
+                    Text("Ho provato a fornire le informazioni più corrette possibili, ma non sono infallibile! Controlla sempre sulla scheda tecnica del farmaco.\nSe trovi errori o hai richieste scrivimi a z1017346@gmail.com")
                     Spacer(modifier = Modifier.height(16.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Checkbox(checked = dontShowAgain, onCheckedChange = { dontShowAgain = it })
@@ -160,7 +160,7 @@ fun AntibioticiScreen() {
             )
             Spacer(modifier = Modifier.height(2.dp))
             Text(
-                text = "segnalazioniAH@gmail.com",
+                text = "z1017346@gmail.com",
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.bodySmall,
                 //fontStyle = FontStyle.Italic
