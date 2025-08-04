@@ -357,4 +357,4 @@ fun AntibioticoDetailDialog(antibiotico: Antibiotico, onDismiss: () -> Unit) {
     )
 }
 
-// beta 3
+// beta 4
