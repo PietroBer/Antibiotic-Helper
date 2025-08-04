@@ -356,5 +356,3 @@ fun AntibioticoDetailDialog(antibiotico: Antibiotico, onDismiss: () -> Unit) {
         }
     )
 }
-
-//uploaded to AntibioticHelper
