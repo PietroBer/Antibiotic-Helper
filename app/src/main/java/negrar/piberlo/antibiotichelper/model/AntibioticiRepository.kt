@@ -295,15 +295,18 @@ object AntibioticiRepository {
         Antibiotico(
             nome = "Levofloxacina",
             dosaggioRegolare = "Adulto: 500-750mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (500-750mg ogni 24 ore)\n• ClCr 20-49 ml/min: 500mg iniziale, poi 250mg ogni 24 ore\n• ClCr < 20 ml/min: 500mg iniziale, poi 250mg ogni 48 ore\n• Emodialisi: 500mg iniziale, poi 250mg ogni 48 ore",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "60 minuti",
             dosaggiParticolari = "Polmonite nosocomiale: 750mg ogni 24 ore EV.",
-            dosaggioOrale = "500-750mg ogni 24 ore",
-            formulazioneOrale = "Compresse",
+            dosaggioOrale = "Stessa posologia ev. 500-750mg ogni 24 ore",
+            formulazioneOrale = "Compresse rivestite divisibili",
+            soluzioniDiluizione = "Soluzione precostituita da 500mg in 100 ml (5mg/ml)\nSoluzione fisiologica (NaCl 0,9%) o glucosata 5%",
+            volumeInfusione = "100 ml (minimo 100 ml)",
+            tempoInfusione = "60 minuti",
+            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (500-750mg ogni 24 ore)\n• ClCr 20-49 ml/min: carico 500mg, poi 250mg ogni 24 ore\n• ClCr < 20 ml/min: 500mg iniziale, poi 250mg ogni 48 ore\n• Emodialisi: 500mg iniziale, poi 250mg ogni 48 ore",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Levofloxacina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- Monitoraggio QTc\n" +
+                    "- Rischio di tendinite, rottura di tendine e neuropatie.\n" +
+                    "- Può causare disturbi del sonno"
         ),
         Antibiotico(
             nome = "Linezolid",
