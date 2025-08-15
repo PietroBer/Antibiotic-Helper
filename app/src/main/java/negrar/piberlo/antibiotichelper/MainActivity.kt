@@ -234,15 +234,17 @@ fun AntibioticoDetailScreen(antibiotico: Antibiotico, onBack: () -> Unit) {
                 val uriHandler = LocalUriHandler.current
                 antibiotico.linkUtili.forEach { link ->
                     val regex = Regex("\\[(.*?)\\]\\((.*?)\\)")
-                    val match = regex.find(link)
-                    val label = match?.groups?.get(1)?.value ?: link
-                    val url = match?.groups?.get(2)?.value ?: link
-                    ClickableText(
-                        text = AnnotatedString(label),
-                        style = MaterialTheme.typography.bodyLarge.copy(Color(0xFF427ef5)), //Color(0xFFD32F2F) color = MaterialTheme.colorScheme.primary
-                        onClick = { uriHandler.openUri(url) }
-                    )
-                    Spacer(modifier = Modifier.height(4.dp))
+                    val matches = regex.findAll(link)
+                    for (match in matches) {
+                        val label = match.groups[1]?.value ?: link
+                        val url = match.groups[2]?.value ?: link
+                        ClickableText(
+                            text = AnnotatedString(label),
+                            style = MaterialTheme.typography.bodyLarge.copy(Color(0xFF427ef5)),
+                            onClick = { uriHandler.openUri(url) }
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                    }
                 }
             }
         }
