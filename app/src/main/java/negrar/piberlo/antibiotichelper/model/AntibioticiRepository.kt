@@ -4,38 +4,47 @@ object AntibioticiRepository {
     val antibiotici = listOf(
         Antibiotico(
             nome = "Amikacina",
-            dosaggioRegolare = "15-20 mg/kg/die EV in 1-2 somministrazioni",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 60 ml/min: dose standard\n• ClCr 30-60 ml/min: 10 mg/kg/die\n• ClCr < 30 ml/min: 7,5 mg/kg/die\n• Emodialisi: dose secondo livelli plasmatici",
+            dosaggioRegolare = "15 mg/kg/die (7.5 mg/kg q12h), max 1.5g/die",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "100-200 ml (minimo 100 ml)",
+            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 10-50 ml/min: 7.5 mg/kg q24h\n• ClCr < 10 ml/min: 7.5 mg/kg q48h\n• Emodialisi: 7.5 mg/kg q48h + 3.75 mg/kg dopo dialisi",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
             tempoInfusione = "30-60 minuti",
             dosaggiParticolari = "In infezioni gravi o da Pseudomonas, preferire la dose più alta. Monitorare livelli plasmatici.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Amikacina)"),
-            volumeInfusione = "100-200 ml (minimo 100 ml)"
+            note = "- Possibile dosaggio plasmatico per adeguare la posologia.\n" +
+                    "- Come gli altri aminoglicosidi rischio di:\n" +
+                    "   • Nefrotossicità (necrosi tubulare acuta)\n" +
+                    "   • Otossicità\n" +
+                    "   • Prolungare l'effetto dei blocanti neuromuscolari (raro)\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Amoxicillina/Clavulanato",
-            dosaggioRegolare = "1g/200mg ogni 8 ore EV. Nelle infezioni più gravi o nel sospetto di anaerobi 2g ogni 8 ore",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 30 ml/min: dose standard (1g/200mg ogni 8 ore)\n• ClCr 10-30 ml/min: 1g/200mg ogni 12 ore\n• ClCr < 10 ml/min: 1g/200mg ogni 24 ore\n• Emodialisi: 1g/200mg ogni 24 ore, aggiungere 500mg/125mg dopo ogni seduta di dialisi",
-            adattamentiEpatici = "Usare con cautela in caso di insufficienza epatica grave; monitorare la funzionalità epatica durante il trattamento",
-            tempoInfusione = "30-60 minuti",
+            dosaggioRegolare = "1g/200mg q8h EV. Nelle infezioni più gravi o nel sospetto di anaerobi 2g/200mg q8h",
             dosaggioOrale = "875/125mg ogni 8-12 ore",
             formulazioneOrale = "Compresse, sospensione",
             dosaggiParticolari = "In infezioni gravi (es. sospetto di anaerobi, polmoniti severe, infezioni intra-addominali) può essere usata la dose di 2g/200mg ogni 8 ore EV.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, Ringer",
+            volumeInfusione = "min 20ml (bolo lento), normalmente 100ml",
+            tempoInfusione = "Possiible bolo lento (5 min), meglio in 30-60 minuti",
+            adattamentiRenali = "• ClCr > 30 ml/min: dose standard (1g/200mg ogni 8 ore)\n• ClCr 10-30 ml/min: carico 1g/200mg, poi 500mg/100mg q12h\n• ClCr < 10 ml/min: carico 1g/200mg, poi 500mg/100mg ogni 24 ore\n• Emodialisi: carico 1g/200mg, poi 500mg/100mg q24h + 500mg/100mg dopo seduta dialitica",
+            adattamentiEpatici = "Usare con cautela in caso di insufficienza epatica grave; monitorare la funzionalità epatica durante il trattamento",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Amoxicillina+Clavulanato)"),
-            volumeInfusione = "50-100 ml (minimo 50 ml)"
+            note = "Verificata ✅"
         ),
         Antibiotico(
             nome = "Ampicillina",
             dosaggioRegolare = "1-2g ogni 4-6 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 30 ml/min: dose standard\n• ClCr 10-30 ml/min: 1-2g ogni 8 ore\n• ClCr < 10 ml/min: 1-2g ogni 12 ore\n• Emodialisi: 1-2g ogni 12 ore",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggiParticolari = "Meningite: 2g q4h EV. Endocardite enterococcica: 2g q4h EV.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "50-100 ml (minimo 50 ml)",
             tempoInfusione = "15-30 minuti",
-            dosaggiParticolari = "Meningite: 2g ogni 4 ore EV. Endocardite enterococcica: 2g ogni 4 ore EV.",
+            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (2g ogni 4 ore)\n• ClCr 30-50 ml/min: 2g ogni 6 ore\n• ClCr 15-30 ml/min: 2g ogni 8 ore\n• ClCr <15 ml/min: 2g ogni 12 ore\n• Emodialisi: 2g ogni 12 ore (somm. la dose dopo la seduta)",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ampicillina)"),
-            volumeInfusione = "50-100 ml (minimo 50 ml)"
+            note = "- Non è specificata in scheda tecnica la riduzione del dosaggio in caso di insufficienza renale, in tabella è riportata un expert di UpToDate!" +
+                   "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Anidulafungina",
