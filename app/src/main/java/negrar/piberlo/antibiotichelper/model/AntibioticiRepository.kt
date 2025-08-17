@@ -109,20 +109,22 @@ object AntibioticiRepository {
             adattamentiRenali = "• ClCr ≥  50 ml/min: dose standard\n• ClCr 30-50 ml/min: max 2g ogni 12 h\n• ClCr 11-29 ml/min: max 2g ogni 24 ore\n• ClCr ≤ 10 ml/min: max 1 g ogni 24 ore\n• Emodialisi: Carico 1g. Poi 500 mg/die (1g/die nella neutropenia febbrile), somm. dopo la seduta",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Cefepime)"),
-            note = "- Sull'RCP vi è una tabella più esaustiva per i vari dosaggi terapeutici, qui è riportato il massimo consentito.\n " +
+            note = "- Sull'RCP vi è una tabella più esaustiva per i vari dosaggi terapeutici, qui è riportato il massimo consentito.\n" +
+                    "- Richio di stato epilettico non convulsivo ⚠\uFE0F\n" +
                     "- Verificata ✅"
 
         ),
         Antibiotico(
             nome = "Cefiderocol",
             dosaggioRegolare = "2g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 60 ml/min: dose standard\n• ClCr 30-59 ml/min: 1,5g ogni 8 ore\n• ClCr 15-29 ml/min: 1g ogni 8 ore\n• ClCr < 15 ml/min: 0,75g ogni 12 ore\n• Emodialisi: 0,75g ogni 12 ore dopo dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "100 ml (minimo 100 ml)",
             tempoInfusione = "180 minuti",
-            dosaggiParticolari = "Infezioni da Gram-negativi multiresistenti, inclusi carbapenemasi produttori.",
+            adattamentiRenali = "• ClCr ≥ 120 ml/min: 2g ogni 6 ore.\n• ClCr 60-119 ml/min: Dose standard (2g ogni 8 ore)\n• ClCr 30-59 ml/min: 1.5g ogni 8 ore\n• ClCr 15-29 ml/min: 1g ogni 8 ore\n• ClCr < 15 ml/min: 0.75g ogni 12 ore\n• Emodialisi: 0.75g ogni 12 ore, somm. la dose dopo la seduta",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Cefiderocol)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "Verificata ✅"
+
         ),
         Antibiotico(
             nome = "Ceftarolina",

@@ -153,7 +153,7 @@ fun AntibioticiScreen() {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Dr Pietro Berloni  - beta 4.0",
+                text = "Dr Pietro Berloni  - beta 4.1",
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic
