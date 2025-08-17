@@ -43,65 +43,75 @@ object AntibioticiRepository {
             adattamentiRenali = "• ClCr > 50 ml/min: dose standard (2g ogni 4 ore)\n• ClCr 30-50 ml/min: 2g ogni 6 ore\n• ClCr 15-30 ml/min: 2g ogni 8 ore\n• ClCr <15 ml/min: 2g ogni 12 ore\n• Emodialisi: 2g ogni 12 ore (somm. la dose dopo la seduta)",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ampicillina)"),
-            note = "- Non è specificata in scheda tecnica la riduzione del dosaggio in caso di insufficienza renale, in tabella è riportata un expert di UpToDate!" +
+            note = "- Non è specificata in scheda tecnica la riduzione del dosaggio in caso di insufficienza renale, in tabella è riportata un expert di UpToDate!\n" +
                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Anidulafungina",
-            dosaggioRegolare = "Dose di carico 200mg EV, poi 100mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
+            dosaggioRegolare = "Carico 200mg EV, poi 100mg ogni 24 ore EV",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "Minimo: 200mg in 200 ml, 100 mg in 100 ml",
+            tempoInfusione = "180 min per 200mg, 90 minuti per 100 mg (max 1.1 mg/min)",
             adattamentiRenali = "Non sono necessari aggiustamenti",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "90 minuti",
-            dosaggiParticolari = "Candidemia e candidiasi invasiva.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Anidulafungina)"),
-            volumeInfusione = "250 ml (minimo 100 ml)"
+            note = "- Verificata ✅"
+
         ),
         Antibiotico(
             nome = "Azitromicina",
             dosaggioRegolare = "500mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "60 minuti",
             dosaggioOrale = "500mg ogni 24 ore",
             formulazioneOrale = "Compresse, sospensione",
             dosaggiParticolari = "Polmonite atipica, infezioni da clamidia.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "250 ml",
+            tempoInfusione = "min. 60 minuti",
+            adattamentiRenali = "• ClCr > 10 ml/min: Dose standard\n • ClCr < 10 ml/min: Usare con cautela (RCP). Non necessari aggiustamenti (Sanford)\n• Dialisi: Non necessari aggiustamenti (Sanford)",
+            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave (RCP).\nNon necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Azitromicina)"),
-            volumeInfusione = "250 ml (minimo 100 ml)"
+            note = "- Monitoraggio QTc\n" +
+                    "- Verificata ✅"
+
         ),
         Antibiotico(
             nome = "Caspofungina",
-            dosaggioRegolare = "Dose di carico 70mg EV, poi 50mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Ridurre a 35mg/die in insufficienza epatica moderata-grave",
+            dosaggioRegolare = "Carico 70mg EV, poi 50mg ogni 24 ore EV",
+            dosaggiParticolari = "Se peso > 80 Kg proseguire a 70 mg/die (RCP)",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, Ringer",
+            volumeInfusione = "100 ml",
             tempoInfusione = "60 minuti",
-            dosaggiParticolari = "Candidemia, candidiasi invasiva, aspergillosi refrattaria.",
-            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Caspofungina)"),
-            volumeInfusione = "250 ml (minimo 100 ml)"
+            adattamentiRenali = "Non sono necessari aggiustamenti",
+            adattamentiEpatici = "• Insufficienza epatica moderata (Child-Pugh 7-9): carico 70 mg poi ridurre a 35mg/die.\n• Grave: non disponibili dati (RCP)",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Caspofungina), [Calcola Child-Pugh](https://www.mdcalc.com/calc/340/child-pugh-score-cirrhosis-mortality)"),
+            note = "- NO glucosata (diventa instabile)\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Cefazolina",
-            dosaggioRegolare = "1-2g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 55 ml/min: dose standard\n• ClCr 35-54 ml/min: 1g ogni 12 ore\n• ClCr < 35 ml/min: 1g ogni 24 ore\n• Emodialisi: 1g dopo ogni dialisi",
+            dosaggioRegolare = "1-2g ogni 8 ore EV. Max 12 g/die",
+            dosaggiParticolari = "Profilassi chirurgica: 2g EV 30-60 minuti prima dell'incisione. Se intervento prolungato ripetere infusione a 4 ore.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o 0.45%, glucosata 5% o 10%, Ringer o Ringer lattato)",
+            volumeInfusione = "50-100 ml",
+            tempoInfusione = "30-60 minuti",
+            adattamentiRenali = "• ClCr ≥  55 ml/min: Dose standard\n• ClCr 35-54 ml/min: Dose standard ogni 8 h\n• ClCr 11-34 ml/min: 1/2 della dose standard ogni 12 ore\n• ClCr ≤ 10 ml/min: 1/4 della dose standard ogni 18-24 ore\n• Emodialisi: 1/4 dose standard ogni 24 ore (somm. la dose dopo la seduta).",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "30 minuti",
-            dosaggiParticolari = "Profilassi chirurgica: 2g EV 30-60 minuti prima dell'incisione.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Cefazolina)"),
-            volumeInfusione = "50-100 ml (minimo 50 ml)"
+            note = "Verificata ✅"
         ),
         Antibiotico(
             nome = "Cefepime",
-            dosaggioRegolare = "2g ogni 8-12 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 60 ml/min: 2g ogni 8-12 ore\n• ClCr 30-60 ml/min: 2g ogni 12-24 ore\n• ClCr 11-29 ml/min: 1g ogni 12-24 ore\n• ClCr ≤ 10 ml/min: 0,5g ogni 24 ore\n• Emodialisi: 1g dopo ogni dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggioRegolare = "1g ogni 12 ore EV",
+            dosaggiParticolari = "Infezioni gravi: 2g ogni 12 ore. Meningite: 2g ogni 8 ore EV.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5% o 10%, Ringer",
+            volumeInfusione = "100 ml",
             tempoInfusione = "30 minuti",
-            dosaggiParticolari = "Meningite: 2g ogni 8 ore EV.",
+            adattamentiRenali = "• ClCr ≥  50 ml/min: dose standard\n• ClCr 30-50 ml/min: max 2g ogni 12 h\n• ClCr 11-29 ml/min: max 2g ogni 24 ore\n• ClCr ≤ 10 ml/min: max 1 g ogni 24 ore\n• Emodialisi: Carico 1g. Poi 500 mg/die (1g/die nella neutropenia febbrile), somm. dopo la seduta",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Cefepime)"),
-            volumeInfusione = "100 ml (minimo 50 ml)"
+            note = "- Sull'RCP vi è una tabella più esaustiva per i vari dosaggi terapeutici, qui è riportato il massimo consentito.\n " +
+                    "- Verificata ✅"
+
         ),
         Antibiotico(
             nome = "Cefiderocol",
