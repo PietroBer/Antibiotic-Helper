@@ -129,59 +129,70 @@ object AntibioticiRepository {
         Antibiotico(
             nome = "Ceftarolina",
             dosaggioRegolare = "600mg ogni 12 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 30-50 ml/min: 400mg ogni 12 ore\n• ClCr 15-30 ml/min: 300mg ogni 12 ore\n• ClCr < 15 ml/min: 200mg ogni 12 ore",
+            dosaggiParticolari = "Polmoniti gravi, infezioni complicate della cute e dei tessuti molli 600 mg ogni 8 ore",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o 0.45%, glucosata 5%, Ringer lattato",
+            volumeInfusione = "100-250 ml (minimo 50 ml)",
+            tempoInfusione = "60-120 minuti",
+            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 31-50 ml/min: 400mg ogni 12 ore (8 ore per il dosaggio elevato)\n• ClCr 15-30 ml/min: 300mg ogni 12 ore (8 ore per il dosaggio elevato)\n• ClCr < 15 ml/min: 200mg ogni 12 ore (8 ore per il dosaggio elevato)\n• Emodialisi: 200mg ogni 12 ore (8 ore per il dosaggio elevato), somm. la dose dopo la dialisi",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "60 minuti",
-            dosaggiParticolari = "Polmoniti gravi, infezioni complicate della cute e dei tessuti molli.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ceftarolina)"),
-            volumeInfusione = "250 ml (minimo 100 ml)"
+            note = "Verificata ✅"
         ),
         Antibiotico(
             nome = "Ceftazidima",
-            dosaggioRegolare = "1-2g ogni 8-12 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (1-2g ogni 8-12 ore)\n• ClCr 30-50 ml/min: 1g ogni 12 ore\n• ClCr < 30 ml/min: 0,5-1g ogni 24 ore\n• Emodialisi: 1g dopo ogni dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "30-60 minuti",
+            dosaggioRegolare = "1-2g ogni 8 ore EV",
             dosaggiParticolari = "Meningite: 2g ogni 8 ore EV. Infezioni gravi da Pseudomonas.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%, sodio lattato",
+            volumeInfusione = "100 ml (minimo 50 ml)",
+            tempoInfusione = "30-60 minuti",
+            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (1-2g ogni 8 ore)\n• ClCr 31-50 ml/min: 1g ogni 12 ore\n• ClCr 16-30 ml/min: 1g ogni 24 ore\n• ClCr 6-15 ml/min: 0.5 g ogni 24 ore\n• ClCr <5 ml/min: 0.5 g ogni 48 h\n• Emodialisi: 0.5-1 g dopo la seduta dialitica (vedi tabella RCP)",
+            adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n• Insufficienza epatica severa: non disponibili dati (RCP). Non necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ceftazidima)"),
-            volumeInfusione = "100 ml (minimo 50 ml)"
+            note = "- Negli anziani (>80 aa) evitare di superare i 3g/die (RCP)\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Ceftazidima/Avibactam",
-            dosaggioRegolare = "2g/0,5g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 31-50 ml/min: 1g/0,25g ogni 8 ore\n• ClCr 16-30 ml/min: 0,75g/0,188g ogni 12 ore\n• ClCr ≤ 15 ml/min: 0,75g/0,188g ogni 24 ore\n• Emodialisi: 0,75g/0,188g ogni 24 ore dopo dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggioRegolare = "2g/0.5g ogni 8 ore EV",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%, Ringer lattato",
+            volumeInfusione = "minimo 100 ml",
             tempoInfusione = "120 minuti",
-            dosaggiParticolari = "Infezioni complicate da Gram-negativi resistenti, KPC, OXA-48.",
+            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (2g/0.5g ogni 8 ore)\n• ClCr 31-50 ml/min: 1g/0.25g ogni 8 ore\n• ClCr 16-30 ml/min: 0.75g/0.188g ogni 12 ore\n• ClCr 6-15 ml/min: 0.75g/0.188g ogni 24 ore\n• ClCr ≤ 5 ml/min: 0.75g/0.188g ogni 48 ore\n• Emodialisi: 0.75g/0.188g ogni 48 ore. Somm. la dose dopo dialisi",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ceftazidima+Avibactam)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "Verificata ✅"
         ),
         Antibiotico(
             nome = "Ceftriaxone",
-            dosaggioRegolare = "Adulto: 2g ogni 24 ore EV (fino a 4g/die in infezioni gravi)",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti per insufficienza renale, tranne in caso di insufficienza renale grave associata a insufficienza epatica grave",
-            adattamentiEpatici = "Usare con cautela in caso di insufficienza epatica grave",
-            tempoInfusione = "30 minuti",
+            dosaggioRegolare = "2g ogni 24 ore EV (fino a 4g/die in infezioni gravi)",
             dosaggiParticolari = "• Meningite: 2g ogni 12 ore EV.\n• Gonorrea: dose singola 1g EV/IM.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "100 ml (minimo 100 ml)",
+            tempoInfusione = "30 minuti",
+            adattamentiRenali = "• ClCr ≥ 10 ml/min: dose standard (2-4g ogni 24 ore)\n• ClCr <10 ml/min: non superare 2g ogni 24 ore",
+            adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n• Insufficienza epatica severa: non disponibili dati (RCP). Non necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ceftriaxone)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- NO in soluzioni con Calcio (precipita)\n" +
+                    "- Non sono necessari aggiustamenti renali o epatici per il Sanford\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Ciprofloxacina",
             dosaggioRegolare = "400mg ogni 8-12 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr 30-50 ml/min: 200-400mg ogni 12 ore\n• ClCr < 30 ml/min: 200-400mg ogni 24 ore",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "60 minuti",
             dosaggioOrale = "500-750mg ogni 12 ore",
             formulazioneOrale = "Compresse",
             dosaggiParticolari = "Infezioni urinarie complicate, infezioni da Pseudomonas.",
+            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
+            volumeInfusione = "soluzioni precostituite da 100 ml (200mg) o 200 ml (400mg).\n" +
+                              "Se necessario può essere diluita in: soluzione fisiologica 0.9%, glucosata 5% o 10%, Ringer lattato",
+            tempoInfusione = "60 minuti",
+            adattamentiRenali = "• ClCr > 60 ml/min: Dosaggio standard (400mg ogni 8-12 ore)\n• ClCr 30-60 ml/min: 200-400mg ogni 12 ore\n• ClCr < 30 ml/min: 200-400mg ogni 24 ore\n• Emodialisi: 200-400mg ogni 24 ore. Somm. dopo la dialisi\n",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ciprofloxacina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- Per l'adeguamento della posologia renale in caso di formulazione orale valgono gli stessi valori di ClCr e intervallo tra le dosi. Le dosi sono:\n" +
+                    "   • 200mg ev -> 250mg po\n" +
+                    "   • 400mg ev -> 500mg po\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Claritromicina",
