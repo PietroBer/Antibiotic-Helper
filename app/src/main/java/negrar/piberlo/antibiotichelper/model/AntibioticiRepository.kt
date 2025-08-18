@@ -180,7 +180,7 @@ object AntibioticiRepository {
             nome = "Ciprofloxacina",
             dosaggioRegolare = "400mg ogni 8-12 ore EV",
             dosaggioOrale = "500-750mg ogni 12 ore",
-            formulazioneOrale = "Compresse",
+            formulazioneOrale = "Compresse divisibili, granulato per sospensione orale",
             dosaggiParticolari = "Infezioni urinarie complicate, infezioni da Pseudomonas.",
             soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
             volumeInfusione = "soluzioni precostituite da 100 ml (200mg) o 200 ml (400mg).\n" +
@@ -196,38 +196,53 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Claritromicina",
-            dosaggioRegolare = "Adulto: 500-750mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (500-750mg ogni 24 ore)\n• ClCr 20-49 ml/min: 500mg iniziale, poi 250mg ogni 24 ore\n• ClCr < 20 ml/min: 500mg iniziale, poi 250mg ogni 48 ore\n• Emodialisi: 500mg iniziale, poi 250mg ogni 48 ore",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "60 minuti",
-            dosaggiParticolari = "Polmonite nosocomiale: 750mg ogni 24 ore EV.",
+            dosaggioRegolare = "500mg ogni 12 ore EV",
             dosaggioOrale = "500-750mg ogni 24 ore",
-            formulazioneOrale = "Compresse",
+            formulazioneOrale = "Compresse, granulato per sospensione orale",
+            dosaggiParticolari = "Polmonite nosocomiale: 750mg ogni 24 ore EV.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "250 ml (minimo 2 mg/ml)",
+            tempoInfusione = "60 minuti",
+            adattamentiRenali = "• ClCr > 30 ml/min: dose standard (500mg ogni 12 ore)\n• ClCr < 30 ml/min: 1/2 dose standard (500mg ogni 24 ore)\n• Emodialisi: 500mg ogni 24 ore, somm. la dose dopo la dialisi",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Claritromicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- Monitoraggio QTc\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Clindamicina",
-            dosaggioRegolare = "Adulto: 600-900mg ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "30-60 minuti",
+            dosaggioRegolare = "600-1200mg ogni 6-8 ore EV (fino a 4800mg/die)",
+            dosaggioOrale = "600-1200mg/die suddivisi in 3 o 4 somm. (fino a 4800mg/die nella Toxoplasmosi cerebrale)",
+            formulazioneOrale = "Capsule rigide da 150 mg",
             dosaggiParticolari = "Infezioni da anaerobi, infezioni cutanee e ossee.",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "100 ml (min 18 mg/ml)",
+            tempoInfusione = "30-60 minuti (max 30 mg/min)",
+            adattamentiRenali = "Non sono necessari aggiustamenti",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Clindamicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- Non superare 1200mg per dose\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Colistina",
-            dosaggioRegolare = "2-3 milioni UI ogni 8 ore EV (dose in UI, non mg!)",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr 50-80 ml/min: 2 milioni UI ogni 12 ore\n• ClCr < 50 ml/min: 1-2 milioni UI ogni 12-24 ore",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggioRegolare = "• Carico: CBA (mg) = 4 x peso (Kg), infusi in 30-60 min\n• Mantenimento: 180 mg ogni 12 ore (iniziare 12 ore dopo il carico)",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%",
+            volumeInfusione = "50-100 ml (minimo 50 ml)",
             tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Infezioni da Gram-negativi multiresistenti. Attenzione a monitoraggio renale e neurologico.",
+            adattamentiRenali = "• ClCr ≥ 90 ml/min: dose standard\n• ClCr 80-89 ml/min: 170mg ogni 12 ore\n" +
+                                "• ClCr 70-79 ml/min: 150mg ogni 12 ore\n• ClCr 60-69 ml/min: 137.5mg ogni 12 ore\n" +
+                                "• ClCr 50-59 ml/min: 122.5mg ogni 12 ore\n• ClCr 40-49 ml/min: 110mg ogni 12 ore\n" +
+                                "• ClCr 30-39 ml/min: 97.5mg ogni 12 ore\n • ClCr 20-29 ml/min: 87.5mg ogni 12 ore\n" +
+                                "• ClCr 10-19 ml/min: 80mg ogni 12 ore\n• ClCr 5-9 ml/min: 72.5mg ogni 12 ore\n" +
+                                "• ClCr < 5 ml/min: 65mg ogni 12 ore\nEmodialisi: Giorno di non-dialisi 65mg ogni 12 ore. Giorno di dialisi dare 40-50mg in aggiunta alla dose successiva",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Colistina)"),
-            volumeInfusione = "50-100 ml (minimo 50 ml)"
+            note = "- Somministrato come profarmaco Colistimetato (CMS), il dosaggio è in CBA (Colistin Base Activity), in mg.\n" +
+                    "1mg CBA = 30.000 U CMS = 2.4mg CMS\n" +
+                    "- Gli adattamenti renali fanno riferimento alle dosi di mantenimento\n" +
+                    "- Fonte principale Sanford\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Daptomicina",
