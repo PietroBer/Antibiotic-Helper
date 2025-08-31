@@ -202,7 +202,7 @@ fun AntibioticiScreen(isDarkTheme: Boolean, onThemeToggle: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Dr Pietro Berloni  - beta 4.3",
+                text = "Dr Pietro Berloni  - beta 5.0",
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic
@@ -420,5 +420,3 @@ fun AntibioticoDetailDialog(antibiotico: Antibiotico, onDismiss: () -> Unit) {
         }
     )
 }
-
-// beta 4
