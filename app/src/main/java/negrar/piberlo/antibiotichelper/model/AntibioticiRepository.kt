@@ -246,64 +246,94 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Daptomicina",
-            dosaggioRegolare = "Adulto: 4-6 mg/kg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr < 30 ml/min: ogni 48 ore",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "30 minuti",
-            dosaggiParticolari = "Batteriemie, endocarditi da Stafilococco resistente. Non usare in polmoniti.",
+            dosaggioRegolare = "Infezioni cutanee: 4 mg/kg ogni 24 ore EV",
+            dosaggiParticolari = "6 mg/Kg se batteriemie o endocarditi",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%",
+            volumeInfusione = "Minimo 100 ml",
+            tempoInfusione = "30-60 minuti",
+            adattamentiRenali = "• ClCr ≥ 30 ml/min: dose standard\n• ClCr < 30 ml/min: ogni 48 ore\n Dialisi: Ogni 48 ore (dopo la seduta). Se la successiva seduta è a 72h dare 9-15 mg/Kg (Sanford)",
+            adattamentiEpatici = "- Sanford: non sono necessari aggiustamenti\n" +
+                                 "- RCP: non sono necessari aggiustamenti per Child A o B. Non disponibili dati su insufficienza epatica severa",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Daptomicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Non usare nelle polmoniti (inattivata dal surfattante)\n" +
+                    "- NO in soluzioni con glucosio\n" +
+                    "- Dosare CPK durante il trattamento\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Doxiciclina",
-            dosaggioRegolare = "100mg ogni 12 ore EV o per os",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
+            dosaggioRegolare = "200mg il primo giorno poi 100mg ogni 24 ore per os",
+            formulazioneOrale = "Compresse",
             adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "60 minuti",
-            dosaggioOrale = "100mg ogni 12 ore",
-            formulazioneOrale = "Compresse, capsules",
-            dosaggiParticolari = "Malattia di Lyme, infezioni da rickettsie, polmoniti atipiche.",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Doxiciclina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Bambini < 8-12 anni:\n" +
+                    "   • RCP: Evitare (ipoplasia dello smalto con denti gialli)\n" +
+                    "   • Sanford: Sicura nei bambini (ultimi studi non evidenziano rischi)\n" +
+                    "- Fotosensibilità\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Ertapenem",
-            dosaggioRegolare = "Adulto: 1g ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 30 ml/min: dose standard (1g ogni 24 ore)\n• ClCr ≤ 30 ml/min: 500mg ogni 24 ore\n• Emodialisi: 500mg ogni 24 ore, somministrare dopo dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggioRegolare = "1g ogni 24 ore EV",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%",
+            volumeInfusione = "100 ml",
             tempoInfusione = "30 minuti",
-            dosaggiParticolari = "Non raccomandato per infezioni da Pseudomonas o Acinetobacter.",
+            adattamentiRenali = "• ClCr > 30 ml/min: dose standard (1g ogni 24 ore)\n• ClCr ≤ 30 ml/min: 500mg ogni 24 ore\n• Emodialisi: 500mg ogni 24 ore, somm. dopo dialisi",
+            adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n" +
+                                 "• Insufficienza epatica severa: non disponibili dati (RCP). Non necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ertapenem)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Il dosaggio renale è basato sul Sanford. L'RCP sconsiglia l'uso <30 ml/min per mancanza di dati.\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Fluconazolo",
-            dosaggioRegolare = "Adulto: 400mg dose di carico, poi 200-400mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr < 50 ml/min: dimezzare la dose",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Candidemie, meningite criptococcica.",
+            dosaggioRegolare = "400mg dose di carico, poi 200-400mg ogni 24 ore EV",
+            dosaggiParticolari = "Candidemie: carico 800mg poi 400mg ogni 24 ore.",
             dosaggioOrale = "200-400mg ogni 24 ore",
             formulazioneOrale = "Compresse, sospensione",
-            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Fluconazolo)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            soluzioniDiluizione = "Arriva prediluito, se necessario si può diluire ulteriormente con:\n" +
+                                  "Soluzione fisiologica 0.9%, glucosata 5%, Ringer, Ringer lattato, bicarbonato",
+            volumeInfusione = "minimo 50 ml",
+            tempoInfusione = "30-60 minuti",
+            adattamentiRenali = "• ClCr ≥ 50 ml/min: dose standard\n• ClCr < 50 ml/min: metà della dose ogni 24 ore\n• Emodialisi: dose standard i giorni della dialisi (somm. dopo dialisi). Metà dose nei giorni senza dialisi",
+            adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n" +
+                                 "• Insufficienza epatica severa: non disponibili dati (RCP). Non necessari aggiustamenti (Sanford)",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Fluconazolo), [Interazioni Fluconazolo](https://www.pharmamedix.com/principiovoce.php?pa=Fluconazolo&vo=Interazioni)"),
+            note =  "- Dosaggio orale = dosaggio EV\n" +
+                    "- Numerose interazioni farmacologiche" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
-            nome = "Fosfomicina",
-            dosaggioRegolare = "4-8g ogni 6-8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr < 40 ml/min: 4g ogni 12 ore\n• Emodialisi: 4g dopo dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "60 minuti",
-            dosaggioOrale = "3g dose singola",
-            formulazioneOrale = "Bustine",
+            nome = "Fosfomicina EV",
+            dosaggioRegolare = "12-24gr suddivisi ogni 6-8 ore EV",
+            soluzioniDiluizione = "Glucosata 5%, soluzione fisiologica sconsigliata (vedi note)",
+            volumeInfusione = "200 ml (minimo 40 mg/ml)",
+            tempoInfusione = "3 ore (massimo 8 g/h)",
+            adattamentiRenali = "• ClCr ≥ 40 ml/min: dose standard\n" +
+                                "• ClCr 31-40 ml/min: 70% DS (divisi ogni 8-12 ore)\n" +
+                                "• ClCr 21-30 ml/min: 60% DS (divisi ogni 8-12 ore)\n" +
+                                "• ClCr 11-20 ml/min: 40% DS (divisi ogni 8-12 ore)\n" +
+                                "• ClCr ≤ 10 ml/min: 20% DS (divisi ogni 12-24 ore)\n" +
+                                "• Emodialisi: 2g ogni 48 ore dopo dialisi",
+            adattamentiEpatici = "- RCP: non sono necessari aggiustamenti\n- Sanford: Non disponibili dati",
+            note =  "- Max 8g a somministrazione.\n" +
+                    "- Preferire la glucosata per evitare un eccessivo carico di sodio: 10g di Fosfomicina = 1.000cc SF 0.9%!\n" +
+                    "- Rischio di ipoK per elevato carico di sodio.\n" +
+                    "- In caso di insufficienza renale la prima dose è normale (Carico da 8gr), le successive vanno in funzione alla dose standard (DS).\n" +
+                    "- Verificata ✅",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Fosfomicina)")
+        ),
+        Antibiotico(
+            nome = "Fosfomicina per OS",
+            dosaggioRegolare = "3gr in monosomministrazione",
             dosaggiParticolari = "Infezioni urinarie complicate, infezioni da batteri multiresistenti.",
+            formulazioneOrale = "Granulato",
+            adattamentiRenali = "• ClCr ≥ 10 ml/min: dose standard\n• ClCr < 10 ml/min: evitare",
+            adattamentiEpatici = "Non disponibili dati",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Fosfomicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Assumere 2-3 ore dopo il pasto prima di andare a dormire\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Gentamicina",

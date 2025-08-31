@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -48,22 +49,58 @@ import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Brightness4
+import androidx.compose.material.icons.filled.Brightness7
 
+
+private val DISCLAIMER_KEY = booleanPreferencesKey("disclaimer_shown")
+private val THEME_KEY = booleanPreferencesKey("theme_dark")
 
 class MainActivity : ComponentActivity() {
+    private val Context.dataStore by preferencesDataStore(name = "settings")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AntibioticHelperTheme {
+            val context = LocalContext.current
+            val scope = rememberCoroutineScope()
+            var showDialog by remember { mutableStateOf(false) }
+            var dontShowAgain by remember { mutableStateOf(false) }
+            var checkedPref by remember { mutableStateOf(false) }
+            var isDarkTheme by remember { mutableStateOf(false) }
+
+            LaunchedEffect(Unit) {
+                val prefs = context.dataStore.data.first()
+                checkedPref = prefs[DISCLAIMER_KEY] ?: false
+                isDarkTheme = prefs[THEME_KEY] ?: false
+                showDialog = !checkedPref
+            }
+
+            AntibioticHelperTheme(darkTheme = isDarkTheme) {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Surface(modifier = Modifier.padding(innerPadding)) {
-                        DisclaimerWrapper {
-                            AntibioticiScreen()
+                        DisclaimerWrapper(
+                            dataStore = context.dataStore
+                        ) {
+                            AntibioticiScreen(
+                                isDarkTheme = isDarkTheme,
+                                onThemeToggle = {
+                                    isDarkTheme = !isDarkTheme
+                                    scope.launch {
+                                        context.dataStore.edit { it[THEME_KEY] = isDarkTheme }
+                                    }
+                                }
+                            )
                         }
                     }
                 }
@@ -72,19 +109,18 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-private val Context.dataStore by preferencesDataStore(name = "settings")
-val DISCLAIMER_KEY = booleanPreferencesKey("disclaimer_shown")
-
 @Composable
-fun DisclaimerWrapper(content: @Composable () -> Unit) {
-    val context = LocalContext.current
+fun DisclaimerWrapper(
+    dataStore: DataStore<Preferences>,
+    content: @Composable () -> Unit
+) {
     val scope = rememberCoroutineScope()
     var showDialog by remember { mutableStateOf(false) }
     var dontShowAgain by remember { mutableStateOf(false) }
     var checkedPref by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
-        val prefs = context.dataStore.data.first()
+        val prefs = dataStore.data.first()
         checkedPref = prefs[DISCLAIMER_KEY] ?: false
         showDialog = !checkedPref
     }
@@ -107,7 +143,7 @@ fun DisclaimerWrapper(content: @Composable () -> Unit) {
                 Button(onClick = {
                     if (dontShowAgain) {
                         scope.launch {
-                            context.dataStore.edit { it[DISCLAIMER_KEY] = true }
+                            dataStore.edit { it[DISCLAIMER_KEY] = true }
                         }
                     }
                     showDialog = false
@@ -122,7 +158,7 @@ fun DisclaimerWrapper(content: @Composable () -> Unit) {
 }
 
 @Composable
-fun AntibioticiScreen() {
+fun AntibioticiScreen(isDarkTheme: Boolean, onThemeToggle: () -> Unit) {
     var query by remember { mutableStateOf("") }
     var selected by remember { mutableStateOf<Antibiotico?>(null) }
     val antibiotici = AntibioticiRepository.antibiotici
@@ -134,12 +170,25 @@ fun AntibioticiScreen() {
             modifier = Modifier.fillMaxSize().padding(16.dp),
             verticalArrangement = Arrangement.Top
         ) {
-            OutlinedTextField(
-                value = query,
-                onValueChange = { query = it },
-                label = { Text("Cerca antibiotico") },
-                modifier = Modifier.fillMaxWidth()
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                OutlinedTextField(
+                    value = query,
+                    onValueChange = { query = it },
+                    label = { Text("Cerca antibiotico") },
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(modifier = Modifier.padding(horizontal = 8.dp))
+                IconButton(onClick = onThemeToggle) {
+                    Icon(
+                        imageVector = if (isDarkTheme) Icons.Filled.Brightness7 else Icons.Filled.Brightness4,
+                        contentDescription = "Toggle Theme"
+                    )
+                }
+            }
             Spacer(modifier = Modifier.height(12.dp))
             LazyColumn(modifier = Modifier.fillMaxWidth().weight(1f)) {
                 items(antibiotici) { ab ->
@@ -153,7 +202,7 @@ fun AntibioticiScreen() {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Dr Pietro Berloni  - beta 4.1",
+                text = "Dr Pietro Berloni  - beta 4.3",
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic
@@ -169,62 +218,76 @@ fun AntibioticiScreen() {
     } else {
         // Gestione tasto indietro di sistema
         BackHandler { selected = null }
-        AntibioticoDetailScreen(antibiotico = selected!!, onBack = { selected = null })
+        AntibioticoDetailScreen(
+            antibiotico = selected!!,
+            isDarkTheme = isDarkTheme,
+            onBack = { selected = null }
+        )
     }
 }
 
 @Composable
-fun AntibioticoDetailScreen(antibiotico: Antibiotico, onBack: () -> Unit) {
+fun AntibioticoDetailScreen(
+    antibiotico: Antibiotico,
+    isDarkTheme: Boolean,
+    onBack: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        Button(onClick = onBack, modifier = Modifier.padding(bottom = 16.dp)) {
+        Button(
+            onClick = onBack,
+            modifier = Modifier.padding(bottom = 16.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = if (isDarkTheme) MaterialTheme.colorScheme.primary else Color(0xFF1B58A1)
+            )
+        ) {
             Text("Torna indietro")
         }
         Text(text = antibiotico.nome, style = MaterialTheme.typography.headlineMedium) //rimosso androidx.compose.material3.
         Spacer(modifier = Modifier.height(16.dp))
         if (!antibiotico.dosaggioRegolare.isNullOrBlank()) {
-            Section(title = "Dosaggio regolare", content = antibiotico.dosaggioRegolare)
+            Section(title = "Dosaggio regolare", content = antibiotico.dosaggioRegolare, isDarkTheme = isDarkTheme)
         }
         if (!antibiotico.dosaggioOrale.isNullOrBlank()) {
             Spacer(modifier = Modifier.height(12.dp))
-            Section(title = "Dosaggio orale", content = antibiotico.dosaggioOrale)
+            Section(title = "Dosaggio orale", content = antibiotico.dosaggioOrale, isDarkTheme = isDarkTheme)
         }
         if (!antibiotico.formulazioneOrale.isNullOrBlank()) {
             Spacer(modifier = Modifier.height(4.dp))
-            Section(title = "Formulazione orale", content = antibiotico.formulazioneOrale)
+            Section(title = "Formulazione orale", content = antibiotico.formulazioneOrale, isDarkTheme = isDarkTheme)
         }
         if (!antibiotico.dosaggiParticolari.isNullOrBlank()) {
             Spacer(modifier = Modifier.height(12.dp))
-            Section(title = "Dosaggi particolari", content = antibiotico.dosaggiParticolari)
+            Section(title = "Dosaggi particolari", content = antibiotico.dosaggiParticolari, isDarkTheme = isDarkTheme)
         }
         Spacer(modifier = Modifier.height(12.dp))
         if (!antibiotico.soluzioniDiluizione.isNullOrBlank()) {
-            Section(title = "Soluzioni di diluizione", content = antibiotico.soluzioniDiluizione)
+            Section(title = "Soluzioni di diluizione", content = antibiotico.soluzioniDiluizione, isDarkTheme = isDarkTheme)
             Spacer(modifier = Modifier.height(6.dp))
         }
         if (!antibiotico.volumeInfusione.isNullOrBlank()) {
             Spacer(modifier = Modifier.height(4.dp))
-            Section(title = "Volume di infusione", content = antibiotico.volumeInfusione)
+            Section(title = "Volume di infusione", content = antibiotico.volumeInfusione, isDarkTheme = isDarkTheme)
         }
         Spacer(modifier = Modifier.height(6.dp))
         if (!antibiotico.tempoInfusione.isNullOrBlank()) {
-            Section(title = "Tempo di infusione", content = antibiotico.tempoInfusione)
+            Section(title = "Tempo di infusione", content = antibiotico.tempoInfusione, isDarkTheme = isDarkTheme)
         }
         Spacer(modifier = Modifier.height(12.dp))
         if (!antibiotico.adattamentiRenali.isNullOrBlank()) {
-            Section(title = "Adattamenti renali", content = antibiotico.adattamentiRenali)
+            Section(title = "Adattamenti renali", content = antibiotico.adattamentiRenali, isDarkTheme = isDarkTheme)
             Spacer(modifier = Modifier.height(12.dp))
         }
         if (!antibiotico.adattamentiEpatici.isNullOrBlank()) {
-            Section(title = "Adattamenti epatici", content = antibiotico.adattamentiEpatici)
+            Section(title = "Adattamenti epatici", content = antibiotico.adattamentiEpatici, isDarkTheme = isDarkTheme)
         }
         if (!antibiotico.note.isNullOrBlank()) {
             Spacer(modifier = Modifier.height(12.dp))
-            Section(title = "Note", content = antibiotico.note)
+            Section(title = "Note", content = antibiotico.note, isDarkTheme = isDarkTheme)
         }
         if (!antibiotico.linkUtili.isNullOrEmpty()) {
             Spacer(modifier = Modifier.height(12.dp))
@@ -252,12 +315,11 @@ fun AntibioticoDetailScreen(antibiotico: Antibiotico, onBack: () -> Unit) {
 }
 
 @Composable
-fun Section(title: String, content: String) {
-    val darkTheme = isSystemInDarkTheme()
-    val headerColor = if (darkTheme) Color(0xFF333C44) else Color(0xFFE0E0E0)
-    val rowEvenColor = if (darkTheme) Color(0xFF23272B) else Color(0xFFF5F5F5)
-    val rowOddColor = if (darkTheme) Color(0xFF181A1B) else Color.White
-    val textColor = if (darkTheme) Color(0xFFF5F5F5) else Color.Unspecified
+fun Section(title: String, content: String, isDarkTheme: Boolean) {
+    val headerColor = if (isDarkTheme) Color(0xFF333C44) else Color(0xFFE0E0E0)
+    val rowEvenColor = if (isDarkTheme) Color(0xFF23272B) else Color(0xFFEEEEEE)
+    val rowOddColor = if (isDarkTheme) Color(0xFF181A1B) else Color(0xFFF8F8F8)
+    val textColor = if (isDarkTheme) Color(0xFFF5F5F5) else Color(0xFF000000)
     val uriHandler = LocalUriHandler.current
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(text = title, style = MaterialTheme.typography.titleMedium)
