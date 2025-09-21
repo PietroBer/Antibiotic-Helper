@@ -247,7 +247,7 @@ object AntibioticiRepository {
         Antibiotico(
             nome = "Daptomicina",
             dosaggioRegolare = "Infezioni cutanee: 4 mg/kg ogni 24 ore EV",
-            dosaggiParticolari = "6 mg/Kg se batteriemie o endocarditi",
+            dosaggiParticolari = "6 mg/Kg se batteriemie o endocarditi\n8-12 mg/Kg nelle batteriemie o endocarditi da MRSA",
             soluzioniDiluizione = "Soluzione fisiologica 0.9%",
             volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "30-60 minuti",
@@ -337,37 +337,70 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Gentamicina",
-            dosaggioRegolare = "Adulto: 5-7 mg/kg/die EV in unica somministrazione (o 1,5-2 mg/kg ogni 8 ore)",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 60 ml/min: dose standard\n• ClCr 30-60 ml/min: 3 mg/kg/die\n• ClCr < 30 ml/min: 2 mg/kg/die\n• Emodialisi: dose secondo livelli plasmatici",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggioRegolare = "Carico 2 mg/kg EV, poi 1.7-2 mg/kg ogni 8 ore",
+            dosaggiParticolari = "Intervallo esteso: 7 mg/Kg in unica somministrazione ogni 24 ore\n" +
+                                 "Sinergia per infezioni Gram+: 1 mg/Kgb ogni 8 ore",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Endocardite: 3 mg/kg/die in 2-3 somministrazioni. Monitorare livelli plasmatici.",
+            adattamentiRenali = "• ClCr > 50 ml/min: 1.7-2 mg/kg ogni 8 ore\n• ClCr 10-50 ml/min: 1.7-2 mg/kg ogni 12-24 ore\n• ClCr < 10 ml/min: 1.7-2 mg/kg ogni 48 ore\n• Emodialisi: 1.7-2 mg/kg ogni 48 ore, più dose aggiuntiva 0.85-1 mg/kg dopo la dialisi",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Gentamicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- L'intervallo esteso è consigliato nelle infezioni da G-. In caso di insuff. renale:\n" +
+                    "    • ClCr > 60 ml/min: ogni 24 ore\n" +
+                    "    • ClCr 40-59 ml/min: ogni 36 ore\n" +
+                    "    • ClCr 20-39 ml/min: ogni 48 ore\n" +
+                    "    • ClCr <20 ml/min: consigliato dosaggio regolare\n" +
+                    "- RCP piuttosto caotica per i dosaggi, i dati sono presi dal Sanford\n" +
+                    "- Verificata ✅"
+
         ),
         Antibiotico(
-            nome = "Imipenem",
-            dosaggioRegolare = "Adulto: 500mg-1g ogni 6-8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 70 ml/min: dose standard (500mg-1g ogni 6-8 ore)\n• ClCr 41-70 ml/min: 500mg ogni 6 ore\n• ClCr 21-40 ml/min: 250-500mg ogni 6-8 ore\n• ClCr 6-20 ml/min: 250mg ogni 8-12 ore\n• ClCr ≤ 5 ml/min: controindicato\n• Emodialisi: 250-500mg ogni 12 ore dopo dialisi",
+            nome = "Imipenem/Cilastatina",
+            dosaggioRegolare = "1g ogni 8 ore o 500mg ogni 6 ore EV",
+            dosaggiParticolari = "Meningite: 1g ogni 6 ore EV",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%",
+            volumeInfusione = "Minimo 100 ml",
+            tempoInfusione = "30-60 minuti",
+            adattamentiRenali = "• ClCr ≥ 90 ml/min: dose standard\n• ClCr 60-90 ml/min: 500mg ogni 6 ore\n• ClCr 30-60 ml/min: 500mg ogni 8 ore\n• ClCr 15-30 ml/min: 500mg ogni 12 ore\n• ClCr < 15 ml/min: controindicato\n• Emodialisi: 500mg ogni 12 ore (dare dopo dialisi)",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "20-30 minuti",
-            dosaggiParticolari = "Meningite: 1g ogni 6 ore EV.",
-            note = "Rischio di slatentizzazione di crisi epilettiche.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Imipenem)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- L'adattamento renale fa riferimento alla odse 1g ogni 8 ore.\n" +
+                    "  Per dose 500 mg ogni 6 ore:\n" +
+                    "     • ClCr ≥ 90 ml/min: dose standard\n" +
+                    "     • ClCr 60-90 ml/min: 400mg ogni 6 ore\n" +
+                    "     • ClCr 30-60 ml/min: 300 mg ogni 6 ore\n" +
+                    "     • ClCr 15-30 ml/min: 200 mg ogni 6 ore\n" +
+                    "     • ClCr < 15 ml/min: controindicato\n" +
+                    "     • Emodialisi: 200 mg ogni 6 ore (dare dopo la dialisi)\n" +
+                    "  Per la dose 1g ogni 6 ore:\n" +
+                    "    • ClCr ≥ 90 ml/min: dose standard\n" +
+                    "    • ClCr 60-90 ml/min: 750 mg 8 ore\n" +
+                    "    • ClCr 30-60 ml/min: 500mg ogni 6 ore\n" +
+                    "    • ClCr 15-30 ml/min: 500mg ogni 12 ore\n" +
+                    "    • ClCr < 15 ml/min: controindicato\n" +
+                    "    • Emodialisi: 500 mg ogni 12 ore (dare dopo la dialisi)\n" +
+                    "- Rischio di slatentizzazione di crisi epilettiche\n" +
+                    "- Verificata ✅"
+
         ),
         Antibiotico(
             nome = "Isavuconazolo",
-            dosaggioRegolare = "Adulto: dose di carico 200mg ogni 8 ore per 6 dosi, poi 200mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "60 minuti",
+            dosaggioRegolare = "Carico 200mg ogni 8 ore per 6 dosi (2gg), poi 200mg ogni 24 ore EV",
             dosaggiParticolari = "Aspergillosi invasiva, mucormicosi.",
+            dosaggioOrale = "200 ogni 24 ore",
+            formulazioneOrale = "Compresse",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "250 ml",
+            tempoInfusione = "Minimo 60 minuti",
+            adattamentiRenali = "Non sono necessari aggiustamenti",
+            adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n" +
+                                 "• Insufficienza epatica severa: non disponibili dati (RCP). Dimezzare la dose per i dati sulla farmacocinetica (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Isavuconazolo)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- Unico azolo che abbassa il QTc e non lo alza\n" +
+                    "- Utilizzare deflussore con filtro!" +
+                    "- Formulazione orale ed EV sono bioequivalenti!" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Levofloxacina",

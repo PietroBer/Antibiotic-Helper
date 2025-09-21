@@ -245,7 +245,7 @@ fun AntibioticoDetailScreen(
                 containerColor = if (isDarkTheme) MaterialTheme.colorScheme.primary else Color(0xFF1B58A1)
             )
         ) {
-            Text("Torna indietro")
+            Text("Indietro")
         }
         Text(text = antibiotico.nome, style = MaterialTheme.typography.headlineMedium) //rimosso androidx.compose.material3.
         Spacer(modifier = Modifier.height(16.dp))
