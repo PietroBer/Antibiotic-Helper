@@ -296,7 +296,7 @@ object AntibioticiRepository {
                                   "Soluzione fisiologica 0.9%, glucosata 5%, Ringer, Ringer lattato, bicarbonato",
             volumeInfusione = "minimo 50 ml",
             tempoInfusione = "30-60 minuti",
-            adattamentiRenali = "• ClCr ≥ 50 ml/min: dose standard\n• ClCr < 50 ml/min: metà della dose ogni 24 ore\n• Emodialisi: dose standard i giorni della dialisi (somm. dopo dialisi). Metà dose nei giorni senza dialisi",
+            adattamentiRenali = "• ClCr ≥ 50 ml/min: Dose standard\n• ClCr < 50 ml/min: Metà della dose ogni 24 ore\n• Emodialisi: Dose standard i giorni della dialisi (somm. dopo dialisi). Metà dose nei giorni senza dialisi",
             adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n" +
                                  "• Insufficienza epatica severa: non disponibili dati (RCP). Non necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Fluconazolo), [Interazioni Fluconazolo](https://www.pharmamedix.com/principiovoce.php?pa=Fluconazolo&vo=Interazioni)"),
@@ -404,54 +404,60 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Levofloxacina",
-            dosaggioRegolare = "Adulto: 500-750mg ogni 24 ore EV",
+            dosaggioRegolare = "500-750mg ogni 24 ore EV",
             dosaggiParticolari = "Polmonite nosocomiale: 750mg ogni 24 ore EV.",
             dosaggioOrale = "Stessa posologia ev. 500-750mg ogni 24 ore",
             formulazioneOrale = "Compresse rivestite divisibili",
-            soluzioniDiluizione = "Soluzione precostituita da 500mg in 100 ml (5mg/ml)\nSoluzione fisiologica (NaCl 0,9%) o glucosata 5%",
+            soluzioniDiluizione = "Soluzione precostituita da 500mg in 100 ml (5mg/ml)\nSoluzione fisiologica 0.9% o glucosata 5%",
             volumeInfusione = "100 ml (minimo 100 ml)",
             tempoInfusione = "60 minuti",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (500-750mg ogni 24 ore)\n• ClCr 20-49 ml/min: carico 500mg, poi 250mg ogni 24 ore\n• ClCr < 20 ml/min: 500mg iniziale, poi 250mg ogni 48 ore\n• Emodialisi: 500mg iniziale, poi 250mg ogni 48 ore",
+            adattamentiRenali = "• ClCr > 50 ml/min: Dose standard (500-750mg ogni 24 ore)\n• ClCr 20-49 ml/min: 750mg ogni 48 ore\n• ClCr < 20 ml/min: Carico 750mg, poi 500mg ogni 48 ore\n• Emodialisi: Carico 750mg, poi 500mg ogni 48 ore",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Levofloxacina)"),
-            note = "- Monitoraggio QTc\n" +
+            note = "- L'adattamento per funzione renale fa riferimento alla dose standard di 750 mg/die ed è preso dal Sanford" +
+                    "- Monitoraggio QTc\n" +
                     "- Rischio di tendinite, rottura di tendine e neuropatie.\n" +
-                    "- Può causare disturbi del sonno"
+                    "- Può causare disturbi del sonno" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Linezolid",
-            dosaggioRegolare = "Adulto: 600mg ogni 12 ore EV",
-            soluzioniDiluizione = "Soluzione precostituita 300ml",
+            dosaggioRegolare = "600mg ogni 12 ore EV",
             formulazioneOrale = "Compresse, non frantumabili",
             dosaggioOrale = "600mg (1 cp) ogni 12 ore",
+            soluzioniDiluizione = "Soluzione precostituita 300 ml",
+            tempoInfusione = "30-120 minuti",
             adattamentiRenali = "Non sono necessari aggiustamenti",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "30-120 minuti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Linezolid)"),
-            note = "- Monitorare emocromo per rischio mielotossicità.\n" +
+            note =  "- Monitorare emocromo per rischio mielotossicità\n" +
                     "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Meropenem",
             dosaggioRegolare = "1g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 50 ml/min: 1g ogni 8 ore\n• ClCr 26-50 ml/min: 1g ogni 12 ore\n• ClCr 10-25 ml/min: 0,5g ogni 12 ore\n• ClCr < 10 ml/min: 0,5g ogni 24 ore\n• Emodialisi: 0,5g ogni 24 ore, aggiungere 0,25g dopo ogni dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggiParticolari = "In caso di meningite o polmonite in fibrosi cistica, la dose raccomandata è 2g ogni 8 ore EV",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "15-30 minuti (ideale: 3 ore in infusione prolungata)",
-            dosaggiParticolari = "In caso di meningite o polmonite in fibrosi cistica, la dose raccomandata è 2g ogni 8 ore EV.",
+            adattamentiRenali = "• ClCr > 50 ml/min: Dose standard\n• ClCr 26-50 ml/min: Dose standard ogni 12 ore\n• ClCr 10-25 ml/min: 1/2 dose ogni 12 ore\n• ClCr < 10 ml/min: 1/2 dose ogni 24 ore\n• Emodialisi: 1/2 dose ogni 24 ore, somm. dopo la dialisi",
+            adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Meropenem)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Prima dose in 30 min poi le successive in 3h\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Meropenem/Vaborbactam",
             dosaggioRegolare = "2g/2g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 30-49 ml/min: 1g/1g ogni 8 ore\n• ClCr 15-29 ml/min: 1g/1g ogni 12 ore\n• ClCr < 15 ml/min: non raccomandato",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%",
+            volumeInfusione = "250 ml",
+            tempoInfusione = "3 ore",
+            adattamentiRenali = "• ClCr > 40 ml/min: Dose standard\n• ClCr 20-39 ml/min: 1g/1g ogni 8 ore\n• ClCr 10-19 ml/min: 1g/1g ogni 12 ore\n• ClCr < 10 ml/min: 0.5/0.5g ogni 12 ore\n• Emodialisi: ",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "180 minuti",
-            dosaggiParticolari = "Infezioni complicate da Enterobacteriaceae resistenti (KPC).",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Meropenem+Vaborbactam)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- RCP suggerisce di diluire in 250ml ma non specifica una concentrazione minima.\n" +
+                    "- Il Sanford riporta adattamenti renali differenti di 10 ml (es. 20-39 > 30-49 ml/min). In tabella sono riportate i valori della scheda tecnina (RCP).\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Metronidazolo",
