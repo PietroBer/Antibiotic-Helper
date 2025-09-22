@@ -409,7 +409,7 @@ object AntibioticiRepository {
             dosaggioOrale = "Stessa posologia ev. 500-750mg ogni 24 ore",
             formulazioneOrale = "Compresse rivestite divisibili",
             soluzioniDiluizione = "Soluzione precostituita da 500mg in 100 ml (5mg/ml)\nSoluzione fisiologica 0.9% o glucosata 5%",
-            volumeInfusione = "100 ml (minimo 100 ml)",
+            volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "60 minuti",
             adattamentiRenali = "• ClCr > 50 ml/min: Dose standard (500-750mg ogni 24 ore)\n• ClCr 20-49 ml/min: 750mg ogni 48 ore\n• ClCr < 20 ml/min: Carico 750mg, poi 500mg ogni 48 ore\n• Emodialisi: Carico 750mg, poi 500mg ogni 48 ore",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
@@ -461,14 +461,15 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Metronidazolo",
-            dosaggioRegolare = "Adulto: 500mg ogni 8-12 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Ridurre la dose in caso di grave insufficienza epatica",
+            dosaggioRegolare = "500mg ogni 6 ore o 1g ogni 12 ore EV",
+            soluzioniDiluizione = "Soluzione precostituita da 500mg in 100 ml\nSoluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Colite da Clostridioides difficile: 500mg ogni 8 ore per via orale.",
+            adattamentiRenali = "• ClCr ≥10 ml/min: Dose standard\n• ClCr < 10 ml/min: 7.5mg/Kg ogni 12 ore\n• Emodialisi: 7.5mg/Kg ogni 12 ore (somm. dopo la dialisi)",
+            adattamentiEpatici = "Ridurre del 50% la dose se Child-Pugh C (Sanford).\nRidurre la dose in caso di grave insufficienza epatica (RCP)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Metronidazolo)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- La tabella dell'insufficienza renale fa riferimento al Sanford. Per l'RCP non è necessaria alcuna modifica ma <<monitorare per effetti tossici>>\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Micafungina",
