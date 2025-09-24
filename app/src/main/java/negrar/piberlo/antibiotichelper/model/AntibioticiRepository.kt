@@ -17,6 +17,7 @@ object AntibioticiRepository {
                     "   • Nefrotossicità (necrosi tubulare acuta)\n" +
                     "   • Otossicità\n" +
                     "   • Prolungare l'effetto dei blocanti neuromuscolari (raro)\n" +
+                    "- Evitare somministrazione in doppia via con beta-lattamici (viene inattivata)\n" +
                     "- Verificata ✅"
         ),
         Antibiotico(
@@ -340,7 +341,7 @@ object AntibioticiRepository {
             dosaggioRegolare = "Carico 2 mg/kg EV, poi 1.7-2 mg/kg ogni 8 ore",
             dosaggiParticolari = "Intervallo esteso: 7 mg/Kg in unica somministrazione ogni 24 ore\n" +
                                  "Sinergia per infezioni Gram+: 1 mg/Kgb ogni 8 ore",
-            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
             volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "30-60 minuti",
             adattamentiRenali = "• ClCr > 50 ml/min: 1.7-2 mg/kg ogni 8 ore\n• ClCr 10-50 ml/min: 1.7-2 mg/kg ogni 12-24 ore\n• ClCr < 10 ml/min: 1.7-2 mg/kg ogni 48 ore\n• Emodialisi: 1.7-2 mg/kg ogni 48 ore, più dose aggiuntiva 0.85-1 mg/kg dopo la dialisi",
@@ -352,6 +353,7 @@ object AntibioticiRepository {
                     "    • ClCr 20-39 ml/min: ogni 48 ore\n" +
                     "    • ClCr <20 ml/min: consigliato dosaggio regolare\n" +
                     "- RCP piuttosto caotica per i dosaggi, i dati sono presi dal Sanford\n" +
+                    "- Evitare somministrazione in doppia via con beta-lattamici (viene inattivata)\n" +
                     "- Verificata ✅"
 
         ),
@@ -390,7 +392,7 @@ object AntibioticiRepository {
             dosaggiParticolari = "Aspergillosi invasiva, mucormicosi.",
             dosaggioOrale = "200 ogni 24 ore",
             formulazioneOrale = "Compresse",
-            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
             volumeInfusione = "250 ml",
             tempoInfusione = "Minimo 60 minuti",
             adattamentiRenali = "Non sono necessari aggiustamenti",
@@ -437,7 +439,7 @@ object AntibioticiRepository {
             nome = "Meropenem",
             dosaggioRegolare = "1g ogni 8 ore EV",
             dosaggiParticolari = "In caso di meningite o polmonite in fibrosi cistica, la dose raccomandata è 2g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
             volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "15-30 minuti (ideale: 3 ore in infusione prolungata)",
             adattamentiRenali = "• ClCr > 50 ml/min: Dose standard\n• ClCr 26-50 ml/min: Dose standard ogni 12 ore\n• ClCr 10-25 ml/min: 1/2 dose ogni 12 ore\n• ClCr < 10 ml/min: 1/2 dose ogni 24 ore\n• Emodialisi: 1/2 dose ogni 24 ore, somm. dopo la dialisi",
@@ -473,36 +475,53 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Micafungina",
-            dosaggioRegolare = "100mg ogni 24 ore EV (fino a 200mg in infezioni invasive)",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Non sono necessari aggiustamenti",
+            dosaggioRegolare = "100mg ogni 24 ore EV",
+            dosaggiParticolari = "- Candidosi esofagea: 150mg\n- Candidosi invasiva: 100mg (fino a 200mg per RCP)",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "60 minuti",
-            dosaggiParticolari = "Candidemia, profilassi in pazienti ematologici.",
+            adattamentiRenali = "Non sono necessari aggiustamenti",
+            adattamentiEpatici = "• Insufficienza epatica lieve o moderata: non sono necessari aggiustamenti.\n" +
+                                 "• Insufficienza epatica severa: non disponibili dati (RCP). Non sono necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Micafungina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Oxacillina",
-            dosaggioRegolare = "Adulto: 2g ogni 4-6 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
+            dosaggioRegolare = "2g ogni 4 ore EV",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5% o 10%, Ringer lattato",
+            volumeInfusione = "Minimo 100 ml (max 2 mg/ml per RCP)",
             tempoInfusione = "60 minuti",
-            dosaggiParticolari = "Endocardite da Stafilococco sensibile: 2g ogni 4 ore EV.",
+            adattamentiRenali = "• ClCr ≥10 ml/min: Dose standard\n• ClCr < 10 ml/min: Considerare riduzione della dose (RCP e Sanford)",
+            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Oxacillina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Verificata ✅"
+
         ),
         Antibiotico(
             nome = "Piperacillina/Tazobactam",
-            dosaggioRegolare = "Adulto: 4g/0,5g ogni 8 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr > 40 ml/min: dose standard (4g/0,5g ogni 8 ore)\n• ClCr 20-40 ml/min: 4g/0,5g ogni 12 ore\n• ClCr < 20 ml/min: 2g/0,25g ogni 12 ore\n• Emodialisi: 2g/0,25g ogni 8 ore durante i giorni senza dialisi; aggiungere 0,75g/0,094g dopo ogni seduta di dialisi",
-            adattamentiEpatici = "Non sono necessari aggiustamenti significativi",
+            dosaggioRegolare = "4.5g ogni 8 ore EV in 3-4 ore (prima dose in 30 min)",
+            dosaggiParticolari = "Pseudomonas 4.5g ogni 6 ore",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%, Ringer lattato, soluzione di Hartman, Ringer acetato",
+            volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "30 minuti (ideale: 3-4 ore in infusione prolungata)",
-            dosaggiParticolari = "In caso di infezioni da Pseudomonas o in pazienti critici, può essere considerata l'infusione prolungata (4g/0,5g in 3-4 ore ogni 8 ore).",
+            adattamentiRenali = "• ClCr ≥ 40 ml/min: Dose standard (4.5g ogni 8 ore)\n• ClCr 20-40 ml/min: Max 4.5g ogni 8 ore\n• ClCr < 20 ml/min: Max 2.25g ogni 12 ore\n• Emodialisi: 2.25g ogni 8 ore durante i giorni senza dialisi; dose 2.25g dopo seduta di dialisi",
+            adattamentiEpatici = "Non sono necessari aggiustamenti significativi",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Piperacillina+Tazobactam)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Preferire l'infusione prolungata. L'infusione breve andrebbe riservata nei pazienti con problemi di accessi vascolari.\n" +
+                    "- Evitare infusione in doppia via con aminoglicosidi (vengono inattivati).\n" +
+                    "- Evitare infusione in doppia via con bicarbonato (precipita).\n" +
+                    "- Sul Sanford gli adattamenti per la funzione renale sono differenti:\n" +
+                    "  INFUSIONE ESTESA\n" +
+                    "    • ≥ 20 ml/min: dose standard\n" +
+                    "    • < 20 ml/min: 4.5g ogni 12 ore\n" +
+                    "    • Dialisi: 4.5g ogni 12 ore\n" +
+                    "  INFUSIONE INTERMITTENTE\n" +
+                    "    • > 40 ml/min: dose standard\n" +
+                    "    • 20-40 ml/min: max 3.375mg ogni 6 ore\n" +
+                    "    • < 20 ml/min: max 2.25g ogni 6 ore\n" +
+                    "    • Dialisi: max 2.25g ogni 8 ore (+ 0.75g dopo la dialisi)\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Polimixina B",
