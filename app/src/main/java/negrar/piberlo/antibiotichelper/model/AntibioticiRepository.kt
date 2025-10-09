@@ -525,40 +525,58 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Polimixina B",
-            dosaggioRegolare = "1,5-2,5 mg/kg/die EV in 2 dosi",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "Non sono necessari aggiustamenti (ma monitorare funzione renale)",
+            dosaggioRegolare = "Carico 2.5 mg/kg EV, poi dopo 12 ore iniziare la dose di mantenimento: 1.5 mg/Kg EV ogni 12 ore",
+            soluzioniDiluizione = "Glucosata 5%",
+            volumeInfusione = "Minimo 250 ml",
+            tempoInfusione = "Carico 2 ore; dose di mantenimento in 1 ora",
+            adattamentiRenali = "Non sono necessari aggiustamenti",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "60 minuti",
-            dosaggiParticolari = "Infezioni da Gram-negativi multiresistenti. Monitorare funzione renale e neurologica.",
-            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Polimixina+B)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            // linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Polimixina+B)"),
+            note =  "- Somministrare acido ascorbico 1 g EV ogni 6 ore per ridurre il rischio di nefrotossicità\n" +
+                    "- Associare terapia con carbapenemi per ridurre lo sviluppo di resistenze\n" +
+                    "- Non disponibile in Italia la formulazione EV\n" +
+                    "- Non indicato per le IVU (non escreto nelle urine)\n" +
+                    "- Fonte Sanford (non disponibile RCP)\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Posaconazolo",
-            dosaggioRegolare = "300mg ogni 24 ore EV (dopo dose di carico 300mg ogni 12 ore per 2 dosi)",
-            soluzioniDiluizione = "Soluzione glucosata 5%",
+            dosaggioRegolare = "Carico 300mg ogni 12 ore per 2 dosi, poi 300mg ogni 24 ore",
+            formulazioneOrale = "Compresse a rilascio prolungato, sospensione",
+            dosaggioOrale = "Compresse 100 mg, sospensione 40 mg/ml",
+            dosaggiParticolari = "Profilassi infezioni fungine:\n" +
+                    "   - Compresse: carico 300mg ogni 12 h per 2 dosi, poi 300mg ogni 24 ore\n" +
+                    "   - Sospensione: 200mg ogni 8 ore\n" +
+                    "Candidosi orofaringea:\n" +
+                    "   - Sospensione: 100mg ogni 12 ore per 2 dosi, poi 100mg ogni 24 ore",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "Minimo 150 ml (min 2 mg/ml)",
+            tempoInfusione = "90 minuti",
             adattamentiRenali = "Non sono necessari aggiustamenti",
             adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "90 minuti",
-            dosaggioOrale = "300mg ogni 24 ore",
-            formulazioneOrale = "Compresse, sospensione",
-            dosaggiParticolari = "Profilassi e trattamento di infezioni fungine invasive (aspergillosi, mucormicosi).",
-            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Posaconazolo)"),
-            volumeInfusione = "250 ml (minimo 100 ml)"
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Posaconazolo),[Interazioni farmacologiche](https://www.drugs.com/drug-interactions/posaconazole.html)"),
+            note =  "- Per la formulazione EV la fonte è il Sanford, non trovo formulazioni EV per l'Italia\n" +
+                    "- Monitoraggio QTc\n" +
+                    "- Numerose interazioni farmacologiche (vedi link sotto)\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Rifampicina",
-            dosaggioRegolare = "600mg ogni 24 ore EV o per os",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Ridurre la dose in caso di insufficienza epatica grave",
+            dosaggioRegolare = "600-900mg ogni 24 ore EV o per os (suddivisa in 2-3 somministrazioni)",
+            // formulazioneOrale = "Compresse, capsule",
+            // dosaggioOrale = "600mg ogni 24 ore",
+            dosaggiParticolari = "Endocarditi MSSA o MRSA su protesi, Tubercolosi",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
+            volumeInfusione = "100 ml (minimo 100 ml)",
             tempoInfusione = "30 minuti",
-            dosaggioOrale = "600mg ogni 24 ore",
-            formulazioneOrale = "Compresse, capsule",
-            dosaggiParticolari = "Tubercolosi, infezioni protesiche, sempre in associazione ad altri antibiotici.",
-            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Rifampicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            adattamentiRenali = "• ClCr > 50 ml/min: Dose standard\n• ClCr ≤ 50 ml/min: 300-600mg ogni 24 ore\n• Emodialisi: 300-600mg ogni 24 ore",
+            adattamentiEpatici = "Non necessari aggiustamenti",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Rifampicina),[Interazioni farmacologiche](https://www.drugs.com/cons/rifampin-intravenous.html)"),
+            note =  "- Numerose interazioni farmacologiche (vedi link sotto)\n" +
+                    "- Monitorare CPK, AST e ALT\n" +
+                    "- Elevata capcaità di penetrare il biofilm, ma mai in monoterapia\n" +
+                    "- ⚠\uFE0F La terapia della tubercolosi non è qui riportata\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Teicoplanina",
