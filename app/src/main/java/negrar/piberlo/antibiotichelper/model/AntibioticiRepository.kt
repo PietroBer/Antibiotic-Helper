@@ -253,8 +253,8 @@ object AntibioticiRepository {
             volumeInfusione = "Minimo 100 ml",
             tempoInfusione = "30-60 minuti",
             adattamentiRenali = "• ClCr ≥ 30 ml/min: dose standard\n• ClCr < 30 ml/min: ogni 48 ore\n Dialisi: Ogni 48 ore (dopo la seduta). Se la successiva seduta è a 72h dare 9-15 mg/Kg (Sanford)",
-            adattamentiEpatici = "- Sanford: non sono necessari aggiustamenti\n" +
-                                 "- RCP: non sono necessari aggiustamenti per Child A o B. Non disponibili dati su insufficienza epatica severa",
+            adattamentiEpatici = "• Sanford: non sono necessari aggiustamenti\n" +
+                                 "• RCP: non sono necessari aggiustamenti per Child A o B. Non disponibili dati su insufficienza epatica severa",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Daptomicina)"),
             note =  "- Non usare nelle polmoniti (inattivata dal surfattante)\n" +
                     "- NO in soluzioni con glucosio\n" +
@@ -580,49 +580,81 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Teicoplanina",
-            dosaggioRegolare = "400mg ogni 12 ore per 3 dosi (carico), poi 400mg ogni 24 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr < 60 ml/min: 200-400mg ogni 48 ore",
+            dosaggioRegolare = "Carico per 3-5 dosi, poi mantenimento. Il dosaggio varia in base alla sede dell'infezione",
+            dosaggiParticolari = "• Infezioni tessuti molli, IVU, polmoniti: carico 6mg/Kg ogni 12 ore per 3 dosi, mantenimento 6mg/Kg\n" +
+                                 "• Osteomielite o infezioni articolari: 12mg/Kg ogni 12 ore per 3-5 dosi, mantenimento 12mg/Kg\n" +
+                                 "• Endocardite: 12mg/Kg ogni 12 ore per 3-5 dosi, mantenimento 12mk/Kg\n" +
+                                 "• C. difficile: 100-200mg ogni 12 ore PER OS per 7-14gg",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5% o Ringer o Ringer lattato",
+            volumeInfusione = "100 ml",
+            tempoInfusione = "30 minuti",
+            adattamentiRenali = "• ClCr ≥ 80 ml/min: Dose standard\n • ClCr 30-80 ml/min: Carico standard, 1/2 dose di mantenimento\n• ClCr < 30 ml/min: Carico standard, 1/3 dose di mantenimento\n• Emodialisi: Carico standard, 1/3 dose di mantenimento",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Endocarditi, infezioni da MRSA, osteomieliti. Monitorare livelli plasmatici.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Teicoplanina)"),
-            volumeInfusione = "100 ml (minimo 50 ml)"
+            note =  "- Il Sanford consiglia di mantenere la stessa dose di mantenimento ma allungare l'intervallo delle dosi a 48h (ClCr 30-80 ml/min) o 72h (ClCr <30 ml/min)\n" +
+                    "- Monitorare la concentrazione a valle:\n" +
+                    "   • Infezioni tessuti molli, IVU, polmoniti: > 15 μg/ml\n" +
+                    "   • Osteomielite o infezioni articolari: > 20 μg/ml\n" +
+                    "   • Endocardite: > 30 μg/ml\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Tigeciclina",
             dosaggioRegolare = "100mg dose di carico, poi 50mg ogni 12 ore EV",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
+            dosaggiParticolari = "In infezioni da Gram- MDR carico 200mg, manntenimento 100mg",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5% o Ringer lattato",
+            volumeInfusione = "100 ml",
             tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Infezioni complicate addominali, cutanee, polmoniti. Non attiva su Pseudomonas.",
+            adattamentiRenali = "Non sono necessari aggiustamenti",
+            adattamentiEpatici = "In Child-Pugh C: ridurre la dose di mantenimento a 25 mg",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Tigeciclina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note = "- Non attiva su Pseudomonas\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Tobramicina",
-            dosaggioRegolare = "5-7 mg/kg/die EV in unica somministrazione",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%)",
-            adattamentiRenali = "• ClCr 30-60 ml/min: 3 mg/kg/die\n• ClCr < 30 ml/min: 2 mg/kg/die\n• Emodialisi: dose secondo livelli plasmatici",
+            dosaggioRegolare = "Carico 2mg/kg, mantenimento 1.7-2mg/kg ogni 8 ore",
+            dosaggiParticolari = "Possibile il dosaggio esteso: 7 mg/Kg/die",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "Max 1 mg/ml",
+            tempoInfusione = "60 minuti",
+            adattamentiRenali = "• ClCr > 50 ml/min: Dose standard\n• ClCr 10-50 ml/min: 1.7-2mg/kg ogni 12-24 ore\n• ClCr < 10 ml/min: 1.7-2mg/kg ogni 48 ore\n• Emodialisi: 1.7-2mg/kg ogni 48 ore, più dose aggiuntiva 0.85-1 mg/kg dopo la dialisi",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "30-60 minuti",
-            dosaggiParticolari = "Infezioni gravi da Gram-negativi, Pseudomonas. Monitorare livelli plasmatici.",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Tobramicina)"),
-            volumeInfusione = "100-200 ml (minimo 100 ml)"
+            note = "- Verificata ✅"
         ),
         Antibiotico(
-            nome = "Trimetoprim/Sulfametossazolo",
-            dosaggioRegolare = "Adulto: 160/800mg (1 cpr) ogni 12 ore per os o 5-10mg/kg/die (trimetoprim) EV in 2-4 dosi",
-            soluzioniDiluizione = "Soluzione glucosata 5%",
-            adattamentiRenali = "• ClCr 15-30 ml/min: metà dose\n• ClCr < 15 ml/min: evitare se possibile",
-            adattamentiEpatici = "Usare con cautela in insufficienza epatica grave",
-            tempoInfusione = "60-90 minuti",
+            nome = "Trimetoprim/Sulfametossazolo EV",
+            dosaggioRegolare = "10-20mg/kg/die (TMP) EV suddivisi in 2-4 dosi",
             dosaggiParticolari = "Pneumocistosi: 15-20mg/kg/die (trimetoprim) EV in 3-4 dosi.",
-            dosaggioOrale = "160/800mg ogni 12 ore",
-            formulazioneOrale = "Compresse",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "1 fl in 125 ml; 2 fl in 250 ml; 3-4 fl in 500 ml",
+            tempoInfusione = "30-90 minuti (in base al volume)",
+            adattamentiRenali = "• ClCr ≥ 30 ml/min: Dose standard\n• ClCr 10-29 ml/min: 5-10 mg/kg/die divisi ogni 12 ore\n• ClCr < 10 ml/min: Se possibile evitare. Se usato 5-10mg/kg ogni 24 ore\n• Emodialisi: Se possibile evitare. Se usato 5.10mg/kg ogni 24 ore (somm. dopo la dialisi)",
+            adattamentiEpatici = "• RCP: Usare con cautela in insufficienza epatica grave\n" +
+                                 "• Sanford: Non necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Trimetoprim+Sulfametossazolo)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- I valori dei dosaggi fanno riferimento al Trimetoprim (TMP)\n" +
+                    "- Regolare monitoraggio emocromo\n" +
+                    "- Rischio di sdr. Stevens-Johnson\n" +
+                    "- Posologia e adattamenti renali hanno il Sanford come fonte\n" +
+                    "- Verificata ✅"
+        ),
+        Antibiotico(
+            nome = "Trimetoprim/Sulfametossazolo per OS",
+            formulazioneOrale = "Compresse 160mg+800mg, sospensione orale",
+            dosaggioRegolare = "≤ 100 kg: 160mg+800mg (1cp) ogni 12 ore\n" +
+                               "> 100 kg: 160mg+800mg (1cp) ogni 8 ore",
+            dosaggiParticolari = "• Pneumocistosi: 20mg/kg/die (TMP) suddivisi ogni 6 ore\n" +
+                                 "• Profilassi Pneumocistis: 1 cp/die o 3 cp/settimana",
+            adattamentiRenali = "• ClCr ≥ 30 ml/min: Dose standard\n• ClCr 15-30 ml/min: Metà dose\n• ClCr < 15 ml/min: Evitare se possibile",
+            adattamentiEpatici = "• RCP: Usare con cautela in insufficienza epatica grave\n" +
+                                 "• Sanford: Non necessari aggiustamenti",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Trimetoprim+Sulfametossazolo)"),
+            note =  "- Adattamenti renali presi dalla scheda RCP\n" +
+                    "- Regolare monitoraggio emocromo\n" +
+                    "- Rischio di sdr. Stevens-Johnson\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Vancomicina",

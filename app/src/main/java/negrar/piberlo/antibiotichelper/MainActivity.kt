@@ -264,8 +264,9 @@ fun AntibioticoDetailScreen(
             Spacer(modifier = Modifier.height(12.dp))
             Section(title = "Dosaggi particolari", content = antibiotico.dosaggiParticolari, isDarkTheme = isDarkTheme)
         }
-        Spacer(modifier = Modifier.height(12.dp))
+
         if (!antibiotico.soluzioniDiluizione.isNullOrBlank()) {
+            Spacer(modifier = Modifier.height(12.dp))
             Section(title = "Soluzioni di diluizione", content = antibiotico.soluzioniDiluizione, isDarkTheme = isDarkTheme)
             Spacer(modifier = Modifier.height(6.dp))
         }
@@ -273,12 +274,14 @@ fun AntibioticoDetailScreen(
             Spacer(modifier = Modifier.height(4.dp))
             Section(title = "Volume di infusione", content = antibiotico.volumeInfusione, isDarkTheme = isDarkTheme)
         }
-        Spacer(modifier = Modifier.height(6.dp))
+
         if (!antibiotico.tempoInfusione.isNullOrBlank()) {
+            Spacer(modifier = Modifier.height(6.dp))
             Section(title = "Tempo di infusione", content = antibiotico.tempoInfusione, isDarkTheme = isDarkTheme)
         }
-        Spacer(modifier = Modifier.height(12.dp))
+
         if (!antibiotico.adattamentiRenali.isNullOrBlank()) {
+            Spacer(modifier = Modifier.height(12.dp))
             Section(title = "Adattamenti renali", content = antibiotico.adattamentiRenali, isDarkTheme = isDarkTheme)
             Spacer(modifier = Modifier.height(12.dp))
         }
