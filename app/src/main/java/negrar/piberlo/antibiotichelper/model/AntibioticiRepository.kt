@@ -653,19 +653,34 @@ object AntibioticiRepository {
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Trimetoprim+Sulfametossazolo)"),
             note =  "- Adattamenti renali presi dalla scheda RCP\n" +
                     "- Regolare monitoraggio emocromo\n" +
-                    "- Rischio di sdr. Stevens-Johnson\n" +
+                    "- Rischio di sdr. Stevens-Johnson e DRESS\n" +
                     "- Verificata ✅"
         ),
         Antibiotico(
-            nome = "Vancomicina",
-            dosaggioRegolare = "Adulto: 15-20 mg/kg ogni 8-12 ore EV (dose iniziale tipica 1g ogni 12 ore)",
-            soluzioniDiluizione = "Soluzione fisiologica (NaCl 0,9%) o glucosata 5%",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 20-49 ml/min: 15-20 mg/kg ogni 24 ore\n• ClCr < 20 ml/min: dose secondo livelli plasmatici\n• Emodialisi: dose secondo livelli plasmatici, spesso 500 mg dopo ogni dialisi",
+            nome = "Vancomicina EV",
+            dosaggioRegolare = "Carico 25-30mg/kg (max 3g), poi 15-20 mg/kg ogni 8-12 ore EV",
+            dosaggiParticolari = "Infusione continua: carico 15-20 mg/kg, subito dopo iniziare l'infusione continua a 30-40 mg/kg/die",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5% o Ringer lattato",
+            volumeInfusione = "Max 10 mg/ml",
+            tempoInfusione = "Almeno 60 minuti per 1g (max 10 mg/min). Meglio in infusione continua",
+            adattamentiRenali = "• ClCr > 100 ml/min: Dose standard\n• ClCr 51-100 ml/min: 15-20 mg/kg ogni 12 ore\n• ClCr 20-50 ml/min: 15-20 mg/kg ogni 24 ore\n• ClCr < 20 ml/min: 15-20 mg/kg ogni 48 ore\n• Emodialisi: Secondo livelli plasmatici, spesso 500 mg dopo ogni dialisi",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
-            tempoInfusione = "Almeno 60 minuti per 1g (max 10 mg/min)",
-            dosaggiParticolari = "Endocardite, osteomielite, meningite: target livelli plasmatici più elevati (15-20 mg/L).",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Vancomicina)"),
-            volumeInfusione = "100 ml (minimo 100 ml)"
+            note =  "- Monitoraggio con TDM Vancomicina:\n" +
+                    "   • Infusione continua: 20-25 mg/l\n" +
+                    "   • Infusione intermittente: 10-20 mg/l\n" +
+                    "- L'infusione continua sembra aver minor rischio di nefrotossicità\n" +
+                    "- L'infusione continua si può suddividere in 2 dosi della durata di 12 ore\n" +
+                    "- Antibiotico più frequentemente associato a sdr Stevens-Johnson e DRESS\n" +
+                    "- Verificata ✅"
+        ),
+        Antibiotico(
+            nome = "Vancomicina per OS",
+            dosaggioRegolare = "125mg ogni 6 ore",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Vancomicina)"),
+            note =  "- Solo per trattamento della colite da Clostridium difficile\n" +
+                    "- Prelevare da un flaconcino della soluzione da infusione\n" +
+                    "- Verificata ✅"
         ),
         Antibiotico(
             nome = "Voriconazolo",
