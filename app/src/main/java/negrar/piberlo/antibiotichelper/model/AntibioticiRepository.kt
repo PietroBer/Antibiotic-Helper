@@ -4,10 +4,10 @@ object AntibioticiRepository {
     val antibiotici = listOf(
         Antibiotico(
             nome = "Amikacina",
-            dosaggioRegolare = "15 mg/kg/die (7.5 mg/kg q12h), max 1.5g/die",
+            dosaggioRegolare = "15 mg/kg/die (7.5 mg/kg q12h), max 1.5 g/die",
             soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
             volumeInfusione = "100-200 ml (minimo 100 ml)",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard\n• ClCr 10-50 ml/min: 7.5 mg/kg q24h\n• ClCr < 10 ml/min: 7.5 mg/kg q48h\n• Emodialisi: 7.5 mg/kg q48h + 3.75 mg/kg dopo dialisi",
+            adattamentiRenali = "• ClCr > 50 ml/min: Dose standard\n• ClCr 10-50 ml/min: 7.5 mg/kg q24h\n• ClCr < 10 ml/min: 7.5 mg/kg q48h\n• Emodialisi: 7.5 mg/kg q48h + 3.75 mg/kg dopo dialisi",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
             tempoInfusione = "30-60 minuti",
             dosaggiParticolari = "In infezioni gravi o da Pseudomonas, preferire la dose più alta. Monitorare livelli plasmatici.",
@@ -22,14 +22,14 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Amoxicillina/Clavulanato",
-            dosaggioRegolare = "1g/200mg q8h EV. Nelle infezioni più gravi o nel sospetto di anaerobi 2g/200mg q8h",
-            dosaggioOrale = "875/125mg ogni 8-12 ore",
+            dosaggioRegolare = "1g/200mg q8h EV. Nelle infezioni più gravi o nel sospetto di anaerobi 2 g/200mg q8h",
+            dosaggioOrale = "875/125 mg ogni 8-12 ore",
             formulazioneOrale = "Compresse, sospensione",
-            dosaggiParticolari = "In infezioni gravi (es. sospetto di anaerobi, polmoniti severe, infezioni intra-addominali) può essere usata la dose di 2g/200mg ogni 8 ore EV.",
+            dosaggiParticolari = "In infezioni gravi (es. sospetto di anaerobi, polmoniti severe, infezioni intra-addominali) può essere usata la dose di 2 g/200mg ogni 8 ore EV.",
             soluzioniDiluizione = "Soluzione fisiologica 0.9%, Ringer",
-            volumeInfusione = "min 20ml (bolo lento), normalmente 100ml",
+            volumeInfusione = "Min 20ml (bolo lento), normalmente 100ml",
             tempoInfusione = "Possiible bolo lento (5 min), meglio in 30-60 minuti",
-            adattamentiRenali = "• ClCr > 30 ml/min: dose standard (1g/200mg ogni 8 ore)\n• ClCr 10-30 ml/min: carico 1g/200mg, poi 500mg/100mg q12h\n• ClCr < 10 ml/min: carico 1g/200mg, poi 500mg/100mg ogni 24 ore\n• Emodialisi: carico 1g/200mg, poi 500mg/100mg q24h + 500mg/100mg dopo seduta dialitica",
+            adattamentiRenali = "• ClCr > 30 ml/min: Dose standard (1 g/200mg ogni 8 ore)\n• ClCr 10-30 ml/min: carico 1 g/200mg, poi 500mg/100mg q12h\n• ClCr < 10 ml/min: Carico 1 g/200mg, poi 500mg/100mg ogni 24 ore\n• Emodialisi: Carico 1g/200mg, poi 500mg/100mg q24h + 500mg/100mg dopo seduta dialitica",
             adattamentiEpatici = "Usare con cautela in caso di insufficienza epatica grave; monitorare la funzionalità epatica durante il trattamento",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Amoxicillina+Clavulanato)"),
             note = "Verificata ✅"
@@ -41,7 +41,7 @@ object AntibioticiRepository {
             soluzioniDiluizione = "Soluzione fisiologica 0.9%, glucosata 5%",
             volumeInfusione = "50-100 ml (minimo 50 ml)",
             tempoInfusione = "15-30 minuti",
-            adattamentiRenali = "• ClCr > 50 ml/min: dose standard (2g ogni 4 ore)\n• ClCr 30-50 ml/min: 2g ogni 6 ore\n• ClCr 15-30 ml/min: 2g ogni 8 ore\n• ClCr <15 ml/min: 2g ogni 12 ore\n• Emodialisi: 2g ogni 12 ore (somm. la dose dopo la seduta)",
+            adattamentiRenali = "• ClCr > 50 ml/min: Dose standard (2g ogni 4 ore)\n• ClCr 30-50 ml/min: 2g ogni 6 ore\n• ClCr 15-30 ml/min: 2g ogni 8 ore\n• ClCr <15 ml/min: 2g ogni 12 ore\n• Emodialisi: 2g ogni 12 ore (somm. la dose dopo la seduta)",
             adattamentiEpatici = "Non sono necessari aggiustamenti",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Ampicillina)"),
             note = "- Non è specificata in scheda tecnica la riduzione del dosaggio in caso di insufficienza renale, in tabella è riportata un expert di UpToDate!\n" +
@@ -302,7 +302,7 @@ object AntibioticiRepository {
                                  "• Insufficienza epatica severa: non disponibili dati (RCP). Non necessari aggiustamenti (Sanford)",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Fluconazolo), [Interazioni Fluconazolo](https://www.pharmamedix.com/principiovoce.php?pa=Fluconazolo&vo=Interazioni)"),
             note =  "- Dosaggio orale = dosaggio EV\n" +
-                    "- Numerose interazioni farmacologiche" +
+                    "- Numerose interazioni farmacologiche\n" +
                     "- Verificata ✅"
         ),
         Antibiotico(
@@ -608,7 +608,7 @@ object AntibioticiRepository {
             adattamentiRenali = "Non sono necessari aggiustamenti",
             adattamentiEpatici = "In Child-Pugh C: ridurre la dose di mantenimento a 25 mg",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Tigeciclina)"),
-            note = "- Non attiva su Pseudomonas\n" +
+            note =  "- Non attiva su Pseudomonas\n" +
                     "- Verificata ✅"
         ),
         Antibiotico(
@@ -684,16 +684,28 @@ object AntibioticiRepository {
         ),
         Antibiotico(
             nome = "Voriconazolo",
-            dosaggioRegolare = "6mg/kg ogni 12 ore (2 dosi), poi 4mg/kg ogni 12 ore EV",
-            soluzioniDiluizione = "Soluzione glucosata 5%",
-            adattamentiRenali = "Non sono necessari aggiustamenti (ma evitare EV se ClCr < 50 ml/min)",
-            adattamentiEpatici = "Ridurre la dose in caso di insufficienza epatica moderata-grave",
+            dosaggioRegolare = " Carico 6 mg/kg ogni 12 ore (2 dosi), poi 4 mg/kg ogni 12 ore EV",
+            formulazioneOrale = "Compresse, sospensione orale",
+            dosaggioOrale = "≥ 40 Kg: carico 400 mg ogni 12 ore, poi 200mg ogni 12 ore\n" +
+                            "< 40 kg: carico 200 mg ogni 12 ore, poi 100mg ogni 12 ore",
+            soluzioniDiluizione = "Soluzione fisiologica 0.9% o glucosata 5%",
+            volumeInfusione = "Max 5 mg/ml",
             tempoInfusione = "120 minuti",
-            dosaggioOrale = "200mg ogni 12 ore",
-            formulazioneOrale = "Compresse, sospensione",
-            dosaggiParticolari = "Aspergillosi invasiva, infezioni fungine resistenti.",
-            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Voriconazolo)"),
-            volumeInfusione = "100-200 ml (minimo 100 ml)"
+            adattamentiRenali = "Non sono necessari aggiustamenti",
+            adattamentiEpatici = "• RCP:\n" +
+                                 "    Child-Pugh A o B: Carico standard, ma dimezzare la dose di mantenimento.\n" +
+                                 "    Child-Pugh C: non disponibili dati.\n" +
+                                 "• Sanford (sulla base degli studi di farmacocinetica):\n" +
+                                 "    Child-Pugh A o B: Carico 50% della dose standard; mantenimento 33% della dose standard\n" +
+                                 "    Chil-Pugh C: Carico 50% della dose standard, mantenimente 25% della dose standard",
+            linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Voriconazolo), [Interazioni Voriconazolo](https://www.drugs.com/drug-interactions/voriconazole.html)"),
+            note =  "- Monitoraggio con TDM: range 1-5.5 μg/ml\n" +
+                    "- Regolare monitoraggio AST e ALT\n" +
+                    "- Ottima biodispnobilità, possibile passaggio alla formulazione orale con lo stesso dosaggio\n" +
+                    "- Se il paziente è in trattamento con Fenitoina, raddoppiare la dose di Voriconazolo\n" +
+                    "- Assumere lontano dai pasti (1h prima o dopo)\n" +
+                    "- Numerose interzioni farmacologiche, vedi link\n" +
+                    "- Verificata ✅"
         )
     )
 } 
