@@ -1,4 +1,4 @@
-# Antibioti helper
+# Antibiotic Helper
 
 App creata per aiutare i medici nella prescrizione degli antibiotici in ambito ospedaliero.
 
