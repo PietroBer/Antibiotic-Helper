@@ -699,8 +699,9 @@ object AntibioticiRepository {
                                  "    Child-Pugh A o B: Carico 50% della dose standard; mantenimento 33% della dose standard\n" +
                                  "    Chil-Pugh C: Carico 50% della dose standard, mantenimente 25% della dose standard",
             linkUtili = listOf("[Cerca RCP su Google](https://www.google.com/search?q=RCP+Voriconazolo), [Interazioni Voriconazolo](https://www.drugs.com/drug-interactions/voriconazole.html)"),
-            note =  "- Monitoraggio con TDM: range 1-5.5 μg/ml\n" +
-                    "- Regolare monitoraggio AST e ALT\n" +
+            note =  "- Monitoraggio con TDM: range 1-6 mg/l\n" +
+                    "- Regolare monitoraggio emocromo, AST e ALT (2vv/sett)\n" +
+                    "- Monitoraggio QTc settimanale\n" +
                     "- Ottima biodispnobilità, possibile passaggio alla formulazione orale con lo stesso dosaggio\n" +
                     "- Se il paziente è in trattamento con Fenitoina, raddoppiare la dose di Voriconazolo\n" +
                     "- Assumere lontano dai pasti (1h prima o dopo)\n" +
