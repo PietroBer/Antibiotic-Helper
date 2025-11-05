@@ -202,7 +202,7 @@ fun AntibioticiScreen(isDarkTheme: Boolean, onThemeToggle: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Dr Pietro Berloni - v 1.0",
+                text = "Dr Pietro Berloni - v 1.1",
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic
