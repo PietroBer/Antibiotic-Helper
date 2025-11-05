@@ -1,6 +1,8 @@
 # Antibiotic Helper
 
-App creata per aiutare i medici nella prescrizione degli antibiotici in ambito ospedaliero.
+App creata per aiutare i medici nella prescrizione degli antibiotici in ambito ospedaliero.\
+![Schermata principale con tema scuro](homepage.jpg) ![Esempio schermata di un antibiotico](ertapenem.jpg)\
+Si può scegliere il tema chiaro o scuro indipendentemente dal tema del dispositivo.
 
 ## Fonti
 Le informazioni sono prese dalle sched tecniche dei farmaci (RCP) e dalla guida Sanford per la gestione delle infezioni.\
