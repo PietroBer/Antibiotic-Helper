@@ -12,3 +12,9 @@ In entrambi i casi ricontrollate sempre le infromazioni prima di prescrivere una
 Se riscontrate errori o avete suggerimenti scrivete a z1017346@gmail.com
 <br>
 Buon lavoro!
+
+## Privacy
+Questa informativa descrive come Antibiotic Helper tratta i dati degli utenti. 
+1. Dati raccolti
+ Nessun dato personale raccolto — l'app funziona interamente in locale e non invia dati a server esterni.
+Gli utenti possono contattarci per qualsiasi domanda relativa alla privacy
